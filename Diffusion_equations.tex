@@ -1,5 +1,223 @@
 \section{Diffusion equations in tokamak}
 
-On the diffusion time scale, the (perpendicular) transport in an axisymmetric tokamak can be described by flux-surface averaged diffusion equations.
+On the diffusion time scale, the (perpendicular) transport in an axisymmetric tokamak can be described by flux-surface averaged transport (diffusion-convection) equations.
 
-\[\frac{{\partial y}}{{\partial t}} - \frac{\partial }{{\partial x}}D\frac{{\partial y}}{{\partial x}} = {S_y}\]
+\[\frac{{\partial \left\langle y \right\rangle }}{{\partial t}} - \frac{\partial }{{\partial x}}\left( {D\frac{{\partial \left\langle y \right\rangle }}{{\partial x}} + {v_y}\left\langle y \right\rangle } \right) = {S_y}\]
+
+Here, $\left\langle y \right\rangle$ corresponds to flux-averaged quantities,
+
+% MathType!MTEF!2!1!+-
+% feaagKart1ev2aaatCvAUfKttLearuqr1ngBPrgarmqr1ngBPrgitL
+% xBI9gBamXvP5wqSXMqHnxAJn0BKvguHDwzZbqegm0B1jxALjhiov2D
+% aeHbuLwBLnhiov2DGi1BTfMBaebbfv3ySLgzGueE0jxyaibaiKc9yr
+% Vq0xXdbba91rFfpec8Eeeu0xXdbba9frFj0-OqFfea0dXdd9vqaq-J
+% frVkFHe9pgea0dXdar-Jb9hs0dXdbPYxe9vr0-vr0-vqpWqaaeaabi
+% GaciaacaqabeaadaabauaaaOqaaabaaaaaaaaapeWaaaWaa8aabaWd
+% biabdMha5bGaayzkJiaawQYiaiabg2da9maalaaapaqaa8qacqGHci
+% ITa8aabaWdbiabgkGi2kabdAfawbaadaWdbaWdaeaapeGaemyEaKNa
+% eeizaqMaemOvayfaleqabeqdcqGHRiI8aOGaeyypa0ZaaSaaaeaada
+% WdfaWdaeaapeWaaSaaa8aabaWdbiabdMha5bWdaeaapeGaemOqai0d
+% amaaBaaaleaapeGaeeiCaaNaee4Ba8MaeeiBaWgapaqabaaaaOWdbi
+% abbsgaKjabdYgaS9aadaWgaaWcbaWdbiabeI7aXbWdaeqaaaWdbeqa
+% beqdcqWIr4E0cqGHRiI8aaGcbaWaa8qba8aabaWdbmaalaaapaqaa8
+% qacqaIXaqma8aabaWdbiabdkeac9aadaWgaaWcbaWdbiabbchaWjab
+% b+gaVjabbYgaSbWdaeqaaaaak8qacqqGKbazcqWGSbaBpaWaaSbaaS
+% qaa8qacqaH4oqCa8aabeaaa8qabeqab0GaeSyeUhTaey4kIipaaaaa
+% aa!721B!
+\[\left\langle y \right\rangle  = \frac{\partial }{{\partial V}}\int {y{\text{d}}V}  = \frac{{\oint {\frac{y}{{{B_{{\text{pol}}}}}}{\text{d}}{l_\theta }} }}{{\oint {\frac{1}{{{B_{{\text{pol}}}}}}{\text{d}}{l_\theta }} }}\]
+
+$\psi$ is the poloidal magnetic flux and $x$ is a normalized flux coordinate, defined as
+
+\[x = \frac{\rho }{{{\rho _{{\text{1}}}}}},\quad \rho  = \sqrt {\frac{\Phi }{{\pi {B_0}}}} \]
+
+$\Phi$ is the toroidal magnetic flux, $\rho_1$ is $\rho$ at the last closed flux surface.
+
+In particular, for the magnetic flux (or current) diffusion, we have
+
+\[\begin{gathered}
+  \frac{{\partial \psi }}{{\partial t}} - \frac{{\left\langle {{{{{\left| {\nabla \rho } \right|}^2}} \mathord{\left/
+ {\vphantom {{{{\left| {\nabla \rho } \right|}^2}} {{R^2}}}} \right.
+ \kern-\nulldelimiterspace} {{R^2}}}} \right\rangle }}{{{\mu _0}{\sigma _\parallel }\rho _{{\text{1}}}^2\left\langle {{1 \mathord{\left/
+ {\vphantom {1 {{R^2}}}} \right.
+ \kern-\nulldelimiterspace} {{R^2}}}} \right\rangle }}\frac{{{\partial ^2}\psi }}{{\partial {x^2}}} +  \hfill \\
+  \left\{ {\frac{{\left\langle {{{{{\left| {\nabla \rho } \right|}^2}} \mathord{\left/
+ {\vphantom {{{{\left| {\nabla \rho } \right|}^2}} {{R^2}}}} \right.
+ \kern-\nulldelimiterspace} {{R^2}}}} \right\rangle }}{{{\mu _0}{\sigma _\parallel }\rho _{{\text{1}}}^2\left\langle {{1 \mathord{\left/
+ {\vphantom {1 {{R^2}}}} \right.
+ \kern-\nulldelimiterspace} {{R^2}}}} \right\rangle }}\frac{\partial }{{\partial x}}\left[ {\ln \left( {\frac{{V'\left\langle {{{{{\left| {\nabla \rho } \right|}^2}} \mathord{\left/
+ {\vphantom {{{{\left| {\nabla \rho } \right|}^2}} {{R^2}}}} \right.
+ \kern-\nulldelimiterspace} {{R^2}}}} \right\rangle }}{F}} \right)} \right] + \frac{x}{{{\rho _{{\text{1}}}}}}\frac{{{\text{d}}{\rho _{{\text{1}}}}}}{{{\text{d}}t}}} \right\}\frac{{\partial \psi }}{{\partial x}} = \frac{{{B_0}}}{{{\sigma _\parallel }F\left\langle {{1 \mathord{\left/
+ {\vphantom {1 {{R^2}}}} \right.
+ \kern-\nulldelimiterspace} {{R^2}}}} \right\rangle }}{j_{{\text{ni}}}} \hfill \\ 
+\end{gathered} \]
+
+where
+% MathType!MTEF!2!1!+-
+% feaagKart1ev2aaatCvAUfKttLearuqr1ngBPrgarmqr1ngBPrgitL
+% xBI9gBamXvP5wqSXMqHnxAJn0BKvguHDwzZbqegm0B1jxALjhiov2D
+% aeHbuLwBLnhiov2DGi1BTfMBaebbfv3ySLgzGueE0jxyaibaiKc9yr
+% Vq0xXdbba91rFfpec8Eeeu0xXdbba9frFj0-OqFfea0dXdd9vqaq-J
+% frVkFHe9pgea0dXdar-Jb9hs0dXdbPYxe9vr0-vr0-vqpWqaaeaabi
+% GaciaacaqabeaadaabauaaaOqaaiqbdAfawzaafaGaeyypa0JaeyOa
+% IyRaemOvayLaei4la8IaeyOaIyRaeqyWdihaaa!4A00!
+\[V' = \partial V/\partial \rho \]
+
+After using
+
+% MathType!MTEF!2!1!+-
+% feaagKart1ev2aaatCvAUfKttLearuqr1ngBPrgarmqr1ngBPrgitL
+% xBI9gBamXvP5wqSXMqHnxAJn0BKvguHDwzZbqegm0B1jxALjhiov2D
+% aeHbuLwBLnhiov2DGi1BTfMBaebbfv3ySLgzGueE0jxyaibaiKc9yr
+% Vq0xXdbba91rFfpec8Eeeu0xXdbba9frFj0-OqFfea0dXdd9vqaq-J
+% frVkFHe9pgea0dXdar-Jb9hs0dXdbPYxe9vr0-vr0-vqpWqaaeaabi
+% GaciaacaqabeaadaabauaaaOabaeqaqaaaaaaaaaWdbeaacqWGNbWz
+% daWgaaWcbaGaeGymaedabeaakiabg2da9maaamaabaGaeGymaeJaei
+% 4la8IaemOuai1aaWbaaSqabeaacqaIYaGmaaaakiaawMYicaGLQmca
+% aeaacqWGNbWzdaWgaaWcbaGaeGOmaidabeaakiabg2da9maaamaapa
+% qaa8qadaabdaWdaeaapeGaey4bIeTaeqyWdihacaGLhWUaayjcSdWd
+% amaaCaaaleqabaWdbiabikdaYaaak8aacqGGVaWlpeGaemOuai1dam
+% aaCaaaleqabaWdbiabikdaYaaaaOGaayzkJiaawQYiaaaaaa!5B75!
+\[\begin{gathered}
+  {g_1} = \left\langle {1/{R^2}} \right\rangle  \hfill \\
+  {g_2} = \left\langle {{{\left| {\nabla \rho } \right|}^2}/{R^2}} \right\rangle  \hfill \\ 
+\end{gathered} \]
+
+% MathType!MTEF!2!1!+-
+% feaagKart1ev2aaatCvAUfKttLearuqr1ngBPrgarmqr1ngBPrgitL
+% xBI9gBamXvP5wqSXMqHnxAJn0BKvguHDwzZbqegm0B1jxALjhiov2D
+% aeHbuLwBLnhiov2DGi1BTfMBaebbfv3ySLgzGueE0jxyaibaiKc9yr
+% Vq0xXdbba91rFfpec8Eeeu0xXdbba9frFj0-OqFfea0dXdd9vqaq-J
+% frVkFHe9pgea0dXdar-Jb9hs0dXdbPYxe9vr0-vr0-vqpWqaaeaabi
+% GaciaacaqabeaadaabauaaaOqaaabaaaaaaaaapeWaaSaaa8aabaWd
+% biabgkGi2kabeI8a5bWdaeaapeGaeyOaIyRaemiDaqhaaiabgkHiTm
+% aalaaapaqaa8qacqWGNbWzdaWgaaWcbaGaeGOmaidabeaaaOWdaeaa
+% peGaeqiVd02damaaBaaaleaapeGaeGimaadapaqabaGcpeGaeq4Wdm
+% 3damaaBaaaleaapeGaeSyjIafapaqabaGcpeGaeqyWdi3damaaDaaa
+% leaapeGaeeymaedapaqaa8qacqaIYaGmaaGcpaGaem4zaC2aaSbaaS
+% qaaiabigdaXaqabaaaaOWdbmaadmaabaWaaSaaa8aabaWdbiabgkGi
+% 2+aadaahaaWcbeqaa8qacqaIYaGmaaGccqaHipqEa8aabaWdbiabgk
+% Gi2kabdIha49aadaahaaWcbeqaa8qacqaIYaGmaaaaaOGaey4kaSYa
+% aSaaaeaacqGHciITaeaacqGHciITcqWG4baEaaGagiiBaWMaeiOBa4
+% 2aaeWaaeaadaWcaaqaaiqbdAfawzaafaGaem4zaC2aaSbaaSqaaiab
+% ikdaYaqabaaakeaacqWGgbGraaaacaGLOaGaayzkaaWaaSaaaeaacq
+% GHciITcqaHipqEaeaacqGHciITcqWG4baEaaaacaGLBbGaayzxaaGa
+% ey4kaSYaaSaaaeaacqWG4baEaeaacqaHbpGCdaWgaaWcbaGaeGymae
+% dabeaaaaGcdaWcaaqaaiabbsgaKjabeg8aYnaaBaaaleaacqaIXaqm
+% aeqaaaGcbaGaeeizaqMaemiDaqhaamaalaaabaGaeyOaIyRaeqiYdK
+% habaGaeyOaIyRaemiEaGhaaiabg2da9maalaaapaqaa8qacqWGcbGq
+% paWaaSbaaSqaa8qacqaIWaama8aabeaaaOqaa8qacqaHdpWCpaWaaS
+% baaSqaa8qacqWILicua8aabeaak8qacqWGgbGrcqWGNbWzdaWgaaWc
+% baGaeGymaedabeaaaaGccqWGQbGApaWaaSbaaSqaa8qacqqGUbGBcq
+% qGPbqAa8aabeaaaaa!995A!
+\[\frac{{\partial \psi }}{{\partial t}} - \frac{{{g_2}}}{{{\mu _0}{\sigma _\parallel }\rho _{\text{1}}^2{g_1}}}\left[ {\frac{{{\partial ^2}\psi }}{{\partial {x^2}}} + \frac{\partial }{{\partial x}}\ln \left( {\frac{{V'{g_2}}}{F}} \right)\frac{{\partial \psi }}{{\partial x}}} \right] + \frac{x}{{{\rho _1}}}\frac{{{\text{d}}{\rho _1}}}{{{\text{d}}t}}\frac{{\partial \psi }}{{\partial x}} = \frac{{{B_0}}}{{{\sigma _\parallel }F{g_1}}}{j_{{\text{ni}}}}\]
+
+The most common boundary condition is a prescribed total plasma current
+
+% MathType!MTEF!2!1!+-
+% feaagKart1ev2aaatCvAUfKttLearuqr1ngBPrgarmqr1ngBPrgitL
+% xBI9gBamXvP5wqSXMqHnxAJn0BKvguHDwzZbqegm0B1jxALjhiov2D
+% aeHbuLwBLnhiov2DGi1BTfMBaebbfv3ySLgzGueE0jxyaibaiKc9yr
+% Vq0xXdbba91rFfpec8Eeeu0xXdbba9frFj0-OqFfea0dXdd9vqaq-J
+% frVkFHe9pgea0dXdar-Jb9hs0dXdbPYxe9vr0-vr0-vqpWqaaeaabi
+% GaciaacaqabeaadaabauaaaOqaaabaaaaaaaaapeGaemysaK0damaa
+% BaaaleaapeGaeeiCaahapaqabaGcpeGaeyypa0ZaaqGaa8aabaWdbi
+% abgkHiTmaalaaapaqaa8qacqaIXaqma8aabaWdbiabikdaYiabec8a
+% WjabeY7aT9aadaWgaaWcbaWdbiabicdaWaWdaeqaaaaak8qacuWGwb
+% GvgaqbaiabdEgaNnaaBaaaleaacqaIYaGmaeqaaOWaaSaaa8aabaWd
+% biabgkGi2kabeI8a5bWdaeaapeGaeyOaIyRaeqyWdihaaaGaayjcSd
+% WdamaaBaaaleaapeGaemiEaGNaeyypa0JaeGymaedapaqabaaaaa!5D06!
+\[{I_{\text{p}}} = {\left. { - \frac{1}{{2\pi {\mu _0}}}V'{g_2}\frac{{\partial \psi }}{{\partial \rho }}} \right|_{x = 1}}\]
+
+On the magnetic axis we have
+
+\[{\left. {\frac{{\partial \psi }}{{\partial x }}} \right|_{x = 0}} = 0\]
+
+\section{Equilibrium}
+
+MHD equilibrium is described by the Grad-Shafranov equation
+
+% MathType!MTEF!2!1!+-
+% feaagKart1ev2aaatCvAUfKttLearuqr1ngBPrgarmqr1ngBPrgitL
+% xBI9gBamXvP5wqSXMqHnxAJn0BKvguHDwzZbqegm0B1jxALjhiov2D
+% aeHbuLwBLnhiov2DGi1BTfMBaebbfv3ySLgzGueE0jxyaibaiKc9yr
+% Vq0xXdbba91rFfpec8Eeeu0xXdbba9frFj0-OqFfea0dXdd9vqaq-J
+% frVkFHe9pgea0dXdar-Jb9hs0dXdbPYxe9vr0-vr0-vqpWqaaeaabi
+% GaciaacaqabeaadaabauaaaOqaaiabgs5aenaaCaaaleqabaGaeiOk
+% aOcaaOGaeqiYdKNaeyypa0JaeyOeI0IaeqiVd02aaSbaaSqaaiabic
+% daWaqabaGccqWGsbGucqWGQbGAdaWgaaWcbaGaeqy1dygabeaakiab
+% g2da9iabgkHiTiabeY7aTnaaBaaaleaacqaIWaamaeqaaOGaemOuai
+% 1aaWbaaSqabeaacqaIYaGmaaGcdaWcaaqaaiabbsgaKjabdchaWbqa
+% aiabbsgaKjabeI8a5baacqGHsisldaWcaaqaaiabigdaXaqaaiabeY
+% 7aTnaaBaaaleaacqaIWaamaeqaaaaakiabdAeagnaalaaabaGaeeiz
+% aqMaemOrayeabaGaeeizaqMaeqiYdKhaaaaa!6724!
+\[-{\Delta ^*}\psi  =  {\mu _0}R{j_\phi } =  {\mu _0}{R^2}\frac{{{\text{d}}p}}{{{\text{d}}\psi }} + F\frac{{{\text{d}}F}}{{{\text{d}}\psi }}\]
+
+On the diffusion time scale, this equation is valid for every time instant. 
+On the right-hand side appears $p'\left( \psi  \right)$---the pressure gradient---and 
+$FF'\left( \psi  \right)$. $p'$ can be calculated from $p\left( x \right)$ and 
+$\partial \psi /\partial x$. The calculation of $FF'$ is more difficult.
+One possibility, which is currently used in CRONOS and ETS-C, is averaging the G-S
+equation. One obtains
+
+% MathType!MTEF!2!1!+-
+% feaagKart1ev2aaatCvAUfKttLearuqr1ngBPrgarmqr1ngBPrgitL
+% xBI9gBamXvP5wqSXMqHnxAJn0BKvguHDwzZbqegm0B1jxALjhiov2D
+% aeHbuLwBLnhiov2DGi1BTfMBaebbfv3ySLgzGueE0jxyaibaiKc9yr
+% Vq0xXdbba91rFfpec8Eeeu0xXdbba9frFj0-OqFfea0dXdd9vqaq-J
+% frVkFHe9pgea0dXdar-Jb9hs0dXdbPYxe9vr0-vr0-vqpWqaaeaabi
+% GaciaacaqabeaadaabauaaaOqaaiabdAeagjqbdAeagzaafaGaeeii
+% aaIaeeypa0JaeeiiaaYaaSaaaeaacqaH8oqBdaWgaaWcbaGaeGimaa
+% dabeaaaOqaaiabdEgaNnaaBaaaleaacqaIXaqmaeqaaaaakmaabmaa
+% baWaaaWaaeaacqWGQbGAdaWgaaWcbaGaeqy1dygabeaakiabc+caVi
+% abdkfasbGaayzkJiaawQYiaiabgkHiTiqbdchaWzaafaaacaGLOaGa
+% ayzkaaaaaa!5667!
+\[FF'{\text{  =  }}\frac{{{\mu _0}}}{{{g_1}}}\left( {\left\langle {{j_\phi }/R} \right\rangle  - p'} \right)\]
+
+The average current term can be calculated as
+
+% MathType!MTEF!2!1!+-
+% feaagKart1ev2aaatCvAUfKttLearuqr1ngBPrgarmqr1ngBPrgitL
+% xBI9gBamXvP5wqSXMqHnxAJn0BKvguHDwzZbqegm0B1jxALjhiov2D
+% aeHbuLwBLnhiov2DGi1BTfMBaebbfv3ySLgzGueE0jxyaibaiKc9yr
+% Vq0xXdbba91rFfpec8Eeeu0xXdbba9frFj0-OqFfea0dXdd9vqaq-J
+% frVkFHe9pgea0dXdar-Jb9hs0dXdbPYxe9vr0-vr0-vqpWqaaeaabi
+% GaciaacaqabeaadaabauaaaOqaaabaaaaaaaaapeWaaaWaaeaacqWG
+% QbGAdaWgaaWcbaGaeqy1dygabeaakiabc+caViabdkfasbGaayzkJi
+% aawQYiaiabg2da9iabgkHiTmaalaaapaqaa8qadaWcaaWdaeaapeGa
+% eyOaIylapaqaa8qacqGHciITcqWG4baEaaWaaeWaa8aabaWdbiqbdA
+% fawzaafaGaem4zaC2damaaBaaaleaapeGaeGOmaidapaqabaGcpeWa
+% aSaaa8aabaWdbiabgkGi2kabeI8a5bWdaeaapeGaeyOaIyRaemiEaG
+% haaaGaayjkaiaawMcaaaWdaeaapeGaeqyWdi3damaaDaaaleaapeGa
+% eGymaedapaqaa8qacqaIYaGmaaGccqaH8oqBpaWaaSbaaSqaa8qacq
+% aIWaama8aabeaak8qacuWGwbGvgaqbaaaaaaa!63BB!
+\[\left\langle {{j_\phi }/R} \right\rangle  =  - \frac{{\frac{\partial }{{\partial x}}\left( {V'{g_2}\frac{{\partial \psi }}{{\partial x}}} \right)}}{{\rho _1^2{\mu _0}V'}}\]
+
+% The averaged toroidal current density is defined as 
+
+%  \[\frac{{\left\langle {{{{j_\phi }} \mathord{\left/
+%  {\vphantom {{{j_\psi }} R}} \right.
+%  \kern-\nulldelimiterspace} R}} \right\rangle }}{{\left\langle {{1 \mathord{\left/
+%  {\vphantom {1 R}} \right.
+%  \kern-\nulldelimiterspace} R}} \right\rangle }} =  - \frac{{\frac{\partial }{{\partial x}}\left( {V'{g_2}\frac{{\partial \psi }}{{\partial x}}} \right)}}{{\rho _1^2{\mu _0}V'{g_9}}}\]
+
+%  where
+
+%  % MathType!MTEF!2!1!+-
+% % feaagKart1ev2aaatCvAUfKttLearuqr1ngBPrgarmqr1ngBPrgitL
+% % xBI9gBamXvP5wqSXMqHnxAJn0BKvguHDwzZbqegm0B1jxALjhiov2D
+% % aeHbuLwBLnhiov2DGi1BTfMBaebbfv3ySLgzGueE0jxyaibaiKc9yr
+% % Vq0xXdbba91rFfpec8Eeeu0xXdbba9frFj0-OqFfea0dXdd9vqaq-J
+% % frVkFHe9pgea0dXdar-Jb9hs0dXdbPYxe9vr0-vr0-vqpWqaaeaabi
+% % GaciaacaqabeaadaabauaaaOaeaaaaaaaaa8qabaGaem4zaC2aaSba
+% % aSqaaiabiMda5aqabaGccqGH9aqpdaaadaqaaiabigdaXiabc+caVi
+% % abdkfasbGaayzkJiaawQYiaaaa!4998!
+% \[{g_9} = \left\langle {1/R} \right\rangle \]
+
+
+\section{(Numerical) challenges}
+
+* Boundary conditions
+* Noise from the G-S equation
+* Calculation of $\frac{{{\partial ^2}\psi }}{{\partial {x^2}}}$
+* Geometric coefficients regularity
+* Possible interplay in FF' and G-S calculation
