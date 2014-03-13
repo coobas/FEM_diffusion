@@ -31,7 +31,8 @@ $\psi$ is the poloidal magnetic flux and $x$ is a normalized flux coordinate, de
 x = \frac{\rho }{{{\rho _{{\text{1}}}}}},\quad \rho  = \sqrt {\frac{\Phi }{{\pi {B_0}}}} 
 \end{equation}
 $\Phi$ is the toroidal magnetic flux, $\rho_1$ is $\rho$ at the last closed flux surface.
-In particular, for the magnetic flux (or current) diffusion, we have
+In particular, for the magnetic flux diffusion, generally called
+the current diffusion equation (CDE), we have \cite{CRONOSref}
 % MathType!MTEF!2!1!+-
 % feaagKart1ev2aaatCvAUfKttLearuqr1ngBPrgarmqr1ngBPrgitL
 % xBI9gBamXvP5wqSXMqHnxAJn0BKvguHDwzZbqegm0B1jxALjhiov2D
@@ -50,7 +51,7 @@ In particular, for the magnetic flux (or current) diffusion, we have
 % dkfas9aadaahaaWcbeqaa8qacqaIYaGmaaaakiaawMYicaGLQmcaaa
 % WaaSaaa8aabaWdbiabgkGi2+aadaahaaWcbeqaa8qacqaIYaGmaaGc
 % cqaHipqEa8aabaWdbiabgkGi2kabdIha49aadaahaaWcbeqaa8qacq
-% aIYaGmaaaaaOGaey4kaScapaqaa8qadaGadaqaamaalaaapaqaa8qa
+% aIYaGmaaaaaOGaeyOeI0capaqaa8qadaGadaqaamaalaaapaqaa8qa
 % daaadaWdaeaapeWaaqWaa8aabaWdbiabgEGirlabeg8aYbGaay5bSl
 % aawIa7a8aadaahaaWcbeqaa8qacqaIYaGmaaGcpaGaei4la8Ydbiab
 % dkfas9aadaahaaWcbeqaa8qacqaIYaGmaaaakiaawMYicaGLQmcaa8
@@ -74,10 +75,10 @@ In particular, for the magnetic flux (or current) diffusion, we have
 % IafapaqabaGcpeGaemOray0aaaWaa8aabaWdbiabigdaX8aacquGVa
 % WlpeGaemOuai1damaaCaaaleqabaWdbiabikdaYaaaaOGaayzkJiaa
 % wQYiaaaacqWGQbGApaWaaSbaaSqaa8qacqqGUbGBcqqGPbqAa8aabe
-% aaaaaaaa!D308!
+% aaaaaaaa!D313!
 \begin{equation}
 \begin{array}{*{20}{c}}
-  {\frac{{\partial \psi }}{{\partial t}} - \frac{{\left\langle {{{\left| {\nabla \rho } \right|}^2}/{R^2}} \right\rangle }}{{{\mu _0}{\sigma _\parallel }\rho _{\text{1}}^2\left\langle {1/{R^2}} \right\rangle }}\frac{{{\partial ^2}\psi }}{{\partial {x^2}}} + } \\ 
+  {\frac{{\partial \psi }}{{\partial t}} - \frac{{\left\langle {{{\left| {\nabla \rho } \right|}^2}/{R^2}} \right\rangle }}{{{\mu _0}{\sigma _\parallel }\rho _{\text{1}}^2\left\langle {1/{R^2}} \right\rangle }}\frac{{{\partial ^2}\psi }}{{\partial {x^2}}} - } \\ 
   {\left\{ {\frac{{\left\langle {{{\left| {\nabla \rho } \right|}^2}/{R^2}} \right\rangle }}{{{\mu _0}{\sigma _\parallel }\rho _{\text{1}}^2\left\langle {1/{R^2}} \right\rangle }}\frac{\partial }{{\partial x}}\left[ {\ln \left( {\frac{{V'\left\langle {{{\left| {\nabla \rho } \right|}^2}{\text{/}}{R^2}} \right\rangle }}{F}} \right)} \right] + \frac{x}{{{\rho _{\text{1}}}}}\frac{{{\text{d}}{\rho _{\text{1}}}}}{{{\text{d}}t}}} \right\}\frac{{\partial \psi }}{{\partial x}} = \frac{{{B_0}}}{{{\sigma _\parallel }F\left\langle {1{\text{/}}{R^2}} \right\rangle }}{j_{{\text{ni}}}}} 
 \end{array}
 \end{equation}
@@ -134,16 +135,16 @@ the equation can be written as
 % 2aaeWaaeaadaWcaaqaaiqbdAfawzaafaGaem4zaC2aaSbaaSqaaiab
 % ikdaYaqabaaakeaacqWGgbGraaaacaGLOaGaayzkaaWaaSaaaeaacq
 % GHciITcqaHipqEaeaacqGHciITcqWG4baEaaaacaGLBbGaayzxaaGa
-% ey4kaSYaaSaaaeaacqWG4baEaeaacqaHbpGCdaWgaaWcbaGaeGymae
+% eyOeI0YaaSaaaeaacqWG4baEaeaacqaHbpGCdaWgaaWcbaGaeGymae
 % dabeaaaaGcdaWcaaqaaiabbsgaKjabeg8aYnaaBaaaleaacqaIXaqm
 % aeqaaaGcbaGaeeizaqMaemiDaqhaamaalaaabaGaeyOaIyRaeqiYdK
 % habaGaeyOaIyRaemiEaGhaaiabg2da9maalaaapaqaa8qacqWGcbGq
 % paWaaSbaaSqaa8qacqaIWaama8aabeaaaOqaa8qacqaHdpWCpaWaaS
 % baaSqaa8qacqWILicua8aabeaak8qacqWGgbGrcqWGNbWzdaWgaaWc
 % baGaeGymaedabeaaaaGccqWGQbGApaWaaSbaaSqaa8qacqqGUbGBcq
-% qGPbqAa8aabeaaaaa!995A!
+% qGPbqAa8aabeaaaaa!9965!
 \begin{equation}
-\frac{{\partial \psi }}{{\partial t}} - \frac{{{g_2}}}{{{\mu _0}{\sigma _\parallel }\rho _{\text{1}}^2{g_1}}}\left[ {\frac{{{\partial ^2}\psi }}{{\partial {x^2}}} + \frac{\partial }{{\partial x}}\ln \left( {\frac{{V'{g_2}}}{F}} \right)\frac{{\partial \psi }}{{\partial x}}} \right] + \frac{x}{{{\rho _1}}}\frac{{{\text{d}}{\rho _1}}}{{{\text{d}}t}}\frac{{\partial \psi }}{{\partial x}} = \frac{{{B_0}}}{{{\sigma _\parallel }F{g_1}}}{j_{{\text{ni}}}}
+\frac{{\partial \psi }}{{\partial t}} - \frac{{{g_2}}}{{{\mu _0}{\sigma _\parallel }\rho _{\text{1}}^2{g_1}}}\left[ {\frac{{{\partial ^2}\psi }}{{\partial {x^2}}} + \frac{\partial }{{\partial x}}\ln \left( {\frac{{V'{g_2}}}{F}} \right)\frac{{\partial \psi }}{{\partial x}}} \right] - \frac{x}{{{\rho _1}}}\frac{{{\text{d}}{\rho _1}}}{{{\text{d}}t}}\frac{{\partial \psi }}{{\partial x}} = \frac{{{B_0}}}{{{\sigma _\parallel }F{g_1}}}{j_{{\text{ni}}}}
 \end{equation}
 
 \subsection{Boundary conditions}
@@ -208,6 +209,7 @@ the $\psi$ consistency:
 \begin{equation}
 I_{\text{p}}^ *  = {I_{\text{p}}}\left( {1 + \frac{{\psi _1^{{\text{diff}}} - \psi _1^{{\text{eq}}}}}{{\psi _0^{{\text{eq}}} - \psi _1^{{\text{eq}}}}}} \right)
 \end{equation}
+which is then used in (\ref{eq:bcflux}).
 The second possibility is similar to the approach in DINA \cite{DINA1993}:
 % MathType!MTEF!2!1!+-
 % feaagKart1ev2aaatCvAUfKttLearuqr1ngBPrgarmqr1ngBPrgitL
@@ -228,8 +230,10 @@ The second possibility is similar to the approach in DINA \cite{DINA1993}:
 % GLOaGaayzkaaGaey4kaSIafmysaKKbaGaadaWgaaWcbaGaeeiCaaha
 % beaakiabc6caUaaa!77E1!
 \begin{equation}
-\frac{{{\psi _{\text{1}}}}}{{{{\tilde L}_{{\text{ext}}}}}} - \gamma C{\left. {\frac{{\partial \psi }}{{\partial \rho }}} \right|_{\rho  = 1}} = \frac{1}{{{{\tilde L}_{{\text{ext}}}}}}\left( {{{\tilde \psi }_{\text{1}}} + \psi _{\text{0}}^{{\text{ext}}} - \tilde \psi _{\text{0}}^{{\text{ext}}}} \right) + {\tilde I_{\text{p}}}.
+\label{eq:bcdina}
+\frac{{{\psi _{\text{1}}}}}{{{{\tilde L}_{{\text{ext}}}}}} - \gamma C{\left. {\frac{{\partial \psi }}{{\partial x }}} \right|_{x  = 1}} = \frac{1}{{{{\tilde L}_{{\text{ext}}}}}}\left( {{{\tilde \psi }_{\text{1}}} + \psi _{\text{0}}^{{\text{ext}}} - \tilde \psi _{\text{0}}^{{\text{ext}}}} \right) + {\tilde I_{\text{p}}}.
 \end{equation}
+where $\gamma  = {L_{{\text{ext}}}}/{\tilde L_{{\text{ext}}}}$.
 
 
 \section{Equilibrium}
@@ -276,9 +280,7 @@ equation. One obtains
 \begin{equation}
 FF'{\text{  =  }}\frac{{{\mu _0}}}{{{g_1}}}\left( {\left\langle {{j_\phi }/R} \right\rangle  - p'} \right)
 \end{equation}
-
 The average current term can be calculated as
-
 % MathType!MTEF!2!1!+-
 % feaagKart1ev2aaatCvAUfKttLearuqr1ngBPrgarmqr1ngBPrgitL
 % xBI9gBamXvP5wqSXMqHnxAJn0BKvguHDwzZbqegm0B1jxALjhiov2D
@@ -316,10 +318,97 @@ Since the current density is generally continuous, it follows that
 
 \section{(Numerical) challenges}
 
-\begin{itemize}
+\begin{enumerate}
 \item Boundary conditions
 \item Noise from the G-S equation
-\item Calculation of $\frac{{{\partial ^2}\psi }}{{\partial {x^2}}}$
-\item Geometric coefficients regularity
+\item Geometric coefficients smoothness
+\item Calculation of $\left\langle {{j_\phi }/R} \right\rangle$ using $\frac{{{\partial ^2}\psi }}{{\partial {x^2}}}$
 \item Possible interplay in FF' and G-S calculation
-\end{itemize}
+\end{enumerate}
+
+Neumann (\ref{eq:bcflux}) and Robin (\ref{eq:bcdina}) boundary conditions
+are not straightforward in a finite difference solver. On top of that, the solution
+does not carry the information about the derivatives (an additional bookkeeping
+is required).
+
+FBE solvers tend to use rather coarse calculation meshes because of the complexity
+and non-linearity of the problem. The results is typically a numerical noise in
+$\psi_1$ and geometric coefficients.
+
+This also implies that the geometric coefficients does not have to be smooth enough ($C^1$).
+This is of course a problem in the calculation of $\left\langle {{j_\phi }/R} \right\rangle$
+as well as in the CDE.
+
+We have to use some kind of smooth interpolation or approximation of $\psi\left( x \right)$ 
+in order to calculate $\frac{{{\partial ^2}\psi }}{{\partial {x^2}}}$. 
+Splines under tension are typically used in CRONOS. This means that (1) it is only
+an approximation, (2) oscillations can (and actually do) appear near $x=1$ 
+(even if the exact value of
+$\left.{\frac{{\partial \psi }}{{\partial x }}} \right|_{x  = 1}$ is provided).
+
+The $FF'$ calculation takes place in the transport-equilibrium iteration scheme. Since
+the averaged G-S equation contains geometric coefficients, there can be an interplay,
+which might lead to an instability. This is most recently discussed in \cite{FableScheme2013}.
+
+\section{A finite elements method approch}
+
+\subsection{A brief overview}
+
+Assume a general partial differential equation (PDE)
+% MathType!MTEF!2!1!+-
+% feaagKart1ev2aaatCvAUfKttLearuqr1ngBPrgarmqr1ngBPrgitL
+% xBI9gBamXvP5wqSXMqHnxAJn0BKvguHDwzZbqegm0B1jxALjhiov2D
+% aeHbuLwBLnhiov2DGi1BTfMBaebbfv3ySLgzGueE0jxyaibaiKc9yr
+% Vq0xXdbba91rFfpec8Eeeu0xXdbba9frFj0-OqFfea0dXdd9vqaq-J
+% frVkFHe9pgea0dXdar-Jb9hs0dXdbPYxe9vr0-vr0-vqpWqaaeaabi
+% GaciaacaqabeaadaabauaaaOqaaiabdYeamjabdAgaMjabgkHiTiab
+% dEgaNjabg2da9iabicdaWaaa!47C0!
+\begin{equation}
+Lf - g = 0
+\end{equation}
+with boundary conditions
+% MathType!MTEF!2!1!+-
+% feaagKart1ev2aaatCvAUfKttLearuqr1ngBPrgarmqr1ngBPrgitL
+% xBI9gBamXvP5wqSXMqHnxAJn0BKvguHDwzZbqegm0B1jxALjhiov2D
+% aeHbuLwBLnhiov2DGi1BTfMBaebbfv3ySLgzGueE0jxyaibaiKc9yr
+% Vq0xXdbba91rFfpec8Eeeu0xXdbba9frFj0-OqFfea0dXdd9vqaq-J
+% frVkFHe9pgea0dXdar-Jb9hs0dXdbPYxe9vr0-vr0-vqpWqaaeaabi
+% GaciaacaqabeaadaabauaaaOqaaiabdoeadjabdAgaMjabgkHiTiab
+% dIgaOjabg2da9iabicdaWaaa!47B0!
+\begin{equation}
+Cf - h = 0
+\end{equation}
+The Galerkin finite elements method (FEM) solves this problem
+in a weak form:
+% MathType!MTEF!2!1!+-
+% feaagKart1ev2aaatCvAUfKttLearuqr1ngBPrgarmqr1ngBPrgitL
+% xBI9gBamXvP5wqSXMqHnxAJn0BKvguHDwzZbqegm0B1jxALjhiov2D
+% aeHbuLwBLnhiov2DGi1BTfMBaebbfv3ySLgzGueE0jxyaibaiKc9yr
+% Vq0xXdbba91rFfpec8Eeeu0xXdbba9frFj0-OqFfea0dXdd9vqaq-J
+% frVkFHe9pgea0dXdar-Jb9hs0dXdbPYxe9vr0-vr0-vqpWqaaeaabi
+% GaciaacaqabeaadaabauaaaOqaamaapebabaWaaeWaaeaacqWGmbat
+% daaeabqaaiabew9aMnaaBaaaleaacqWGPbqAaeqaaOGaemOray0aaS
+% baaSqaaiabdMgaPbqabaGccqGHsislcqWGNbWzaSqabeqaniabggHi
+% LdaakiaawIcacaGLPaaacqaHvpGzdaWgaaWcbaGaem4AaSgabeaaki
+% abbsgaKjabfM6axbWcbaGaeuyQdCfabeqdcqGHRiI8aOGaeyypa0Ja
+% eGimaaJaeiilaWIaaGzbVlabdUgaRjabg2da9iabigdaXiablAcilj
+% abd6eaobaa!61F7!
+\begin{equation}
+\int_\Omega  {\left( {L\sum {{\phi _i}{F_i} - g} } \right){\phi _k}{\text{d}}\Omega }  = 0,\quad k = 1 \ldots N
+\end{equation}
+Here, $\phi_i$ are the finite elements, which are basis functions with
+finite support, and the function $f$ is discretized as
+% MathType!MTEF!2!1!+-
+% feaagKart1ev2aaatCvAUfKttLearuqr1ngBPrgarmqr1ngBPrgitL
+% xBI9gBamXvP5wqSXMqHnxAJn0BKvguHDwzZbqegm0B1jxALjhiov2D
+% aeHbuLwBLnhiov2DGi1BTfMBaebbfv3ySLgzGueE0jxyaibaiKc9yr
+% Vq0xXdbba91rFfpec8Eeeu0xXdbba9frFj0-OqFfea0dXdd9vqaq-J
+% frVkFHe9pgea0dXdar-Jb9hs0dXdbPYxe9vr0-vr0-vqpWqaaeaabi
+% GaciaacaqabeaadaabauaaaOqaaiabdAgaMjabg2da9maaqaeabaGa
+% emOray0aaSbaaSqaaiabdMgaPbqabaGccqaHvpGzdaWgaaWcbaGaem
+% yAaKgabeaaaeqabeqdcqGHris5aaaa!4B6B!
+\begin{equation}
+f = \sum {{F_i}{\phi _i}} 
+\end{equation}
+
+
