@@ -419,15 +419,15 @@ approximations.
 
 \subsection{Hermite elements} % (fold)
 \label{ssub:hermite_elements}
-1D Hermite elements are polynomials ${\rm H}_{ij}\left(\xi\right)$,
+1D Hermite elements are polynomials ${\rm H}_{j}\left(\xi_i\right)$,
 for which
 \begin{equation}
 \begin{array}{*{20}{c}}
-  {{\rm H} _{ij}^{\left( k \right)}\left( 0 \right) = {\delta _{jk}}} \\ 
-  {{\rm H} _{ij}^{\left( k \right)}\left( { \pm 1} \right) = 0} 
+  {{\rm H} _{j}^{\left( k \right)}\left( 0 \right) = {\delta _{jk}}} \\ 
+  {{\rm H} _{j}^{\left( k \right)}\left( { \pm 1} \right) = 0} 
 \end{array}
 \end{equation}
-where $\xi$, $- 1 \leqslant \xi  \leqslant 1$ is a normalized coordinate,
+where $\xi_i=\left( x - x_i \right) / h_i$, $- 1 \leqslant \xi  \leqslant 1$ is a normalized coordinate,
 the superscript $^{\left( k \right)}$ denotes the $k^{\rm th}$
 derivative and $\delta$ is the Kronecker symbol.
 As such, the coefficients $F_{ij}$ in the finite element representation of
