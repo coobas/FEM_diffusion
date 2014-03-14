@@ -1,0 +1,1 @@
+<iframe style="display: block; margin-left: auto; margin-right: auto;" id="igraph" src="https://plot.ly/~coobas/7" width="600" height="450" seamless="seamless" scrolling="no"></iframe>
