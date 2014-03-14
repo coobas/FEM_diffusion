@@ -1,1 +1,0 @@
-<iframe id="igraph" src="https://plot.ly/~bchartoff/707/830/475/" width="830" height="500" seamless="seamless" scrolling="no"></iframe>
