@@ -1,1 +1,1 @@
-<iframe style="display: block; margin-left: auto; margin-right: auto;" id="igraph" src="https://plot.ly/~coobas/7" width="600" height="450" seamless="seamless" scrolling="no"></iframe>
+<iframe id="igraph" src="https://plot.ly/~bchartoff/707/830/475/" width="830" height="500" seamless="seamless" scrolling="no">
