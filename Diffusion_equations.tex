@@ -170,7 +170,7 @@ a prescribed total plasma current
 \begin{equation}
 {I_{\text{p}}} = {\left. { - \frac{1}{{2\pi {\mu _0}}}V'{g_2}\frac{{\partial \psi }}{{\partial \rho }}} \right|_{x = 1}}
 \end{equation}
-In case of free-boundary equilibrium simulations, the plasma current is no longer presribed.
+In case of free-boundary equilibrium simulations, the plasma current is no longer prescribed.
 Hence different boundary conditions must be used. As the magnetic flux must be consistent
 in the transport and equilibrium equations, the natural boundary condition (at $x=1$) would be
 % MathType!MTEF!2!1!+-
@@ -350,7 +350,7 @@ The $FF'$ calculation takes place in the transport-equilibrium iteration scheme.
 the averaged G-S equation contains geometric coefficients, there can be an interplay,
 which might lead to an instability. This is most recently discussed in \cite{FableScheme2013}.
 
-\section{A finite elements method approch}
+\section{A finite elements method approach}
 
 \subsection{A brief overview}
 
@@ -419,7 +419,7 @@ approximations.
 
 \subsection{Hermite elements} % (fold)
 \label{ssub:hermite_elements}
-1D Hermite elements are polynomials ${\rm H}_i\left(\xi\right)$,
+1D Hermite elements are polynomials ${\rm H}_{ij}\left(\xi\right)$,
 for which
 \begin{equation}
 \begin{array}{*{20}{c}}
@@ -430,14 +430,14 @@ for which
 where $\xi$, $- 1 \leqslant \xi  \leqslant 1$ is a normalized coordinate,
 the superscript $^{\left( k \right)}$ denotes the $k^{\rm th}$
 derivative and $\delta$ is the Kronecker symbol.
-As such, the coefficients $F_{ij}$ in the finite element reprosentation of
+As such, the coefficients $F_{ij}$ in the finite element representation of
 a function $f$,
 \begin{equation}
 f = \sum {{F_{ij}}{{\rm H} _{ij}}} 
 \end{equation}
 are directly the values of the $j^{\rm th}$
 derivatives of $f$ at a mesh point $i$.
-(Two indeces are used for being more explicit; a renumbering
+(Two indices are used for being more explicit; a renumbering
 to a single index is straightforward.)
 
 Cubic Hermite elements can be expressed as
@@ -466,10 +466,16 @@ ${\rm H}_1$.)
 
 \subsection{Implications for CDE + G-S}
 
+Advantages:
 \begin{enumerate}
 	\item Boundary conditions on derivatives are more natural (similar to Dirichlet).
 	\item The solution, i.e. $\psi$, is $C^1$ (using cubic Hermite elements). 
 	$\psi\left( x\right)$ and $\psi'\left( x\right)$ is directly known for any $x$.
 	\item Some possibly noisy derivative terms from CDE can be eliminated.
-	\item Perhaps, a finite element G-S solver (CEDRES++) migh use $p$ and $F^2$ instead of $p'$ and $FF'$.
+	\item Perhaps, a finite element G-S solver (CEDRES++) might use $p$ and $F^2$ instead of $p'$ and $FF'$.
+\end{enumerate}
+Drawbacks:
+\begin{enumerate}
+	\item FEM is somewhat more complex to implement.
+	\item For the integration, the equation coefficients should be given as functions. Spline interpolants are supposedly well suited.
 \end{enumerate}
