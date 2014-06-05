@@ -1,0 +1,69 @@
+\section{FEM solver definition} % (fold)
+\label{sec:fem_solver}
+
+We propose to implement a FEM solver for a generic diffusion-advection equation, defined as
+\begin{equation}
+% MathType!MTEF!2!1!+-
+% feaagKart1ev2aaatCvAUfKttLearuqr1ngBPrgarmqr1ngBPrgitL
+% xBI9gBamXvP5wqSXMqHnxAJn0BKvguHDwzZbqegm0B1jxALjhiov2D
+% aeHbuLwBLnhiov2DGi1BTfMBaebbfv3ySLgzGueE0jxyaibaiKc9yr
+% Vq0xXdbba91rFfpec8Eeeu0xXdbba9frFj0-OqFfea0dXdd9vqaq-J
+% frVkFHe9pgea0dXdar-Jb9hs0dXdbPYxe9vr0-vr0-vqpWqaaeaabi
+% GaciaacaqabeaadaabauaaaOqaamaalaaabaGaeyOaIylabaGaeyOa
+% IyRaemiDaqhaamaabmaabaGaeqySde2aaSbaaSqaaiabigdaXaqaba
+% GccqWG5bqEaiaawIcacaGLPaaacqGHsislcqaHXoqydaWgaaWcbaGa
+% eGOmaidabeaakmaalaaabaGaeyOaIylabaGaeyOaIyRaemiEaGhaam
+% aabmaabaGaeqySde2aaSbaaSqaaiabiodaZaqabaGcdaWcaaqaaiab
+% gkGi2cqaaiabgkGi2kabdIha4baadaqadaqaaiabeg7aHnaaBaaale
+% aacqaI0aanaeqaaOGaemyEaKhacaGLOaGaayzkaaGaey4kaSIaeqyS
+% de2aaSbaaSqaaiabiwda1aqabaGccqWG5bqEaiaawIcacaGLPaaacq
+% GHRaWkcqaHXoqydaWgaaWcbaGaeGOnaydabeaakmaalaaabaGaeyOa
+% IylabaGaeyOaIyRaemiEaGhaamaabmaabaGaeqySde2aaSbaaSqaai
+% abiEda3aqabaGccqWG5bqEaiaawIcacaGLPaaacqGH9aqpcqaHYoGy
+% daWgaaWcbaGaeGymaedabeaakiabgUcaRiabek7aInaaBaaaleaacq
+% aIYaGmaeqaaOGaemyEaKhaaa!7D9F!
+\frac{\partial }{{\partial t}}\left( {{\alpha _1}y} \right) - {\alpha _2}\frac{\partial }{{\partial x}}\left( {{\alpha _3}\frac{\partial }{{\partial x}}\left( {{\alpha _4}y} \right) + {\alpha _5}y} \right) + {\alpha _6}\frac{\partial }{{\partial x}}\left( {{\alpha _7}y} \right) = {\beta _1} + {\beta _2}y
+\end{equation}
+where $y = y\left( t, x \right)$ is the unknown quantity, $\alpha_i\left( t, x \right)$, $\beta_i\left( t, x \right)$ are known coefficients and $0\leq x \leq 1$. The boundary conditions are
+\begin{equation}
+% MathType!MTEF!2!1!+-
+% feaagKart1ev2aaatCvAUfKttLearuqr1ngBPrgarmqr1ngBPrgitL
+% xBI9gBamXvP5wqSXMqHnxAJn0BKvguHDwzZbqegm0B1jxALjhiov2D
+% aeHbuLwBLnhiov2DGi1BTfMBaebbfv3ySLgzGueE0jxyaibaiKc9yr
+% Vq0xXdbba91rFfpec8Eeeu0xXdbba9frFj0-OqFfea0dXdd9vqaq-J
+% frVkFHe9pgea0dXdar-Jb9hs0dXdbPYxe9vr0-vr0-vqpWqaaeaabi
+% GaciaacaqabeaadaabauaaaOqaamaaeiaabaWaaSaaaeaacqGHciIT
+% cqWG5bqEaeaacqGHciITcqWG4baEaaaacaGLiWoadaWgaaWcbaGaem
+% iEaGNaeyypa0JaeGimaadabeaakiabg2da9iabicdaWaaa!4E0F!
+{\left. {\frac{{\partial y}}{{\partial x}}} \right|_{x = 0}} = 0,
+\end{equation}
+\begin{equation}
+% MathType!MTEF!2!1!+-
+% feaagKart1ev2aaatCvAUfKttLearuqr1ngBPrgarmqr1ngBPrgitL
+% xBI9gBamXvP5wqSXMqHnxAJn0BKvguHDwzZbqegm0B1jxALjhiov2D
+% aeHbuLwBLnhiov2DGi1BTfMBaebbfv3ySLgzGueE0jxyaibaiKc9yr
+% Vq0xXdbba91rFfpec8Eeeu0xXdbba9frFj0-OqFfea0dXdd9vqaq-J
+% frVkFHe9pgea0dXdar-Jb9hs0dXdbPYxe9vr0-vr0-vqpWqaaeaabi
+% GaciaacaqabeaadaabauaaaOqaamaaeiaabaGaeq4SdC2aaSbaaSqa
+% aiabigdaXaqabaGccqWG5bqEcqGHRaWkcqaHZoWzdaWgaaWcbaGaeG
+% OmaidabeaakmaalaaabaGaeyOaIyRaemyEaKhabaGaeyOaIyRaemiE
+% aGhaaaGaayjcSdWaaSbaaSqaaiabdIha4jabg2da9iabigdaXaqaba
+% GccqGH9aqpcqaHZoWzdaWgaaWcbaGaeG4mamdabeaaaaa!57E3!
+{\left. {{\gamma _1}y + {\gamma _2}\frac{{\partial y}}{{\partial x}}} \right|_{x = 1}} = {\gamma _3}
+\end{equation}
+and the initial condition is
+\begin{equation}
+% MathType!MTEF!2!1!+-
+% feaagKart1ev2aaatCvAUfKttLearuqr1ngBPrgarmqr1ngBPrgitL
+% xBI9gBamXvP5wqSXMqHnxAJn0BKvguHDwzZbqegm0B1jxALjhiov2D
+% aeHbuLwBLnhiov2DGi1BTfMBaebbfv3ySLgzGueE0jxyaibaiKc9yr
+% Vq0xXdbba91rFfpec8Eeeu0xXdbba9frFj0-OqFfea0dXdd9vqaq-J
+% frVkFHe9pgea0dXdar-Jb9hs0dXdbPYxe9vr0-vr0-vqpWqaaeaabi
+% GaciaacaqabeaadaabauaaaOqaaiabdMha5naabmaabaGaemiDaqNa
+% eyypa0JaemiDaq3aaSbaaSqaaiabicdaWaqabaGccqGGSaalcqWG4b
+% aEaiaawIcacaGLPaaacqGH9aqpcqWG5bqEdaWgaaWcbaGaeGimaada
+% beaaaaa!4F16!
+y\left( {t = {t_0},x} \right) = {y_0}.
+\end{equation}
+
+% section fem_solver (end)
