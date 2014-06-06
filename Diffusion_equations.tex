@@ -1,38 +1,8 @@
 \section{The current diffusion equation}
 
-On the diffusion time scale, the (perpendicular) transport in an axisymmetric tokamak can be described by flux-surface averaged transport (diffusion-convection) equations.
+The equation for the magnetic flux diffusion in tokamaks, generally called
+the current diffusion equation (CDE), reads \cite{CRONOSref}
 \begin{equation}
-\frac{{\partial \left\langle y \right\rangle }}{{\partial t}} - \frac{\partial }{{\partial x}}\left( {D\frac{{\partial \left\langle y \right\rangle }}{{\partial x}} + {v_y}\left\langle y \right\rangle } \right) = {S_y}
-\end{equation}
-Here, $\left\langle y \right\rangle$ corresponds to flux-averaged quantities,
-% MathType!MTEF!2!1!+-
-% feaagKart1ev2aaatCvAUfKttLearuqr1ngBPrgarmqr1ngBPrgitL
-% xBI9gBamXvP5wqSXMqHnxAJn0BKvguHDwzZbqegm0B1jxALjhiov2D
-% aeHbuLwBLnhiov2DGi1BTfMBaebbfv3ySLgzGueE0jxyaibaiKc9yr
-% Vq0xXdbba91rFfpec8Eeeu0xXdbba9frFj0-OqFfea0dXdd9vqaq-J
-% frVkFHe9pgea0dXdar-Jb9hs0dXdbPYxe9vr0-vr0-vqpWqaaeaabi
-% GaciaacaqabeaadaabauaaaOqaaabaaaaaaaaapeWaaaWaa8aabaWd
-% biabdMha5bGaayzkJiaawQYiaiabg2da9maalaaapaqaa8qacqGHci
-% ITa8aabaWdbiabgkGi2kabdAfawbaadaWdbaWdaeaapeGaemyEaKNa
-% eeizaqMaemOvayfaleqabeqdcqGHRiI8aOGaeyypa0ZaaSaaaeaada
-% WdfaWdaeaapeWaaSaaa8aabaWdbiabdMha5bWdaeaapeGaemOqai0d
-% amaaBaaaleaapeGaeeiCaaNaee4Ba8MaeeiBaWgapaqabaaaaOWdbi
-% abbsgaKjabdYgaS9aadaWgaaWcbaWdbiabeI7aXbWdaeqaaaWdbeqa
-% beqdcqWIr4E0cqGHRiI8aaGcbaWaa8qba8aabaWdbmaalaaapaqaa8
-% qacqaIXaqma8aabaWdbiabdkeac9aadaWgaaWcbaWdbiabbchaWjab
-% b+gaVjabbYgaSbWdaeqaaaaak8qacqqGKbazcqWGSbaBpaWaaSbaaS
-% qaa8qacqaH4oqCa8aabeaaa8qabeqab0GaeSyeUhTaey4kIipaaaaa
-% aa!721B!
-\begin{equation}
-\left\langle y \right\rangle  = \frac{\partial }{{\partial V}}\int {y{\text{d}}V}  = \frac{{\oint {\frac{y}{{{B_{{\text{pol}}}}}}{\text{d}}{l_\theta }} }}{{\oint {\frac{1}{{{B_{{\text{pol}}}}}}{\text{d}}{l_\theta }} }}
-\end{equation}
-$\psi$ is the poloidal magnetic flux and $x$ is a normalized flux coordinate, defined as
-\begin{equation}
-x = \frac{\rho }{{{\rho _{{\text{1}}}}}},\quad \rho  = \sqrt {\frac{\Phi }{{\pi {B_0}}}} 
-\end{equation}
-$\Phi$ is the toroidal magnetic flux, $\rho_1$ is $\rho$ at the last closed flux surface.
-In particular, for the magnetic flux diffusion, generally called
-the current diffusion equation (CDE), we have \cite{CRONOSref}
 % MathType!MTEF!2!1!+-
 % feaagKart1ev2aaatCvAUfKttLearuqr1ngBPrgarmqr1ngBPrgitL
 % xBI9gBamXvP5wqSXMqHnxAJn0BKvguHDwzZbqegm0B1jxALjhiov2D
@@ -68,32 +38,50 @@ the current diffusion equation (CDE), we have \cite{CRONOSref}
 % jkaiaawMcaaaGaay5waiaaw2faaiabgUcaRmaalaaapaqaa8qacqWG
 % 4baEa8aabaWdbiabeg8aY9aadaWgaaWcbaWdbiabbgdaXaWdaeqaaa
 % aak8qadaWcaaWdaeaapeGaeeizaqMaeqyWdi3damaaBaaaleaapeGa
-% eeymaedapaqabaaakeaapeGaeeizaqMaemiDaqhaaaGaay5Eaiaaw2
-% haamaalaaapaqaa8qacqGHciITcqaHipqEa8aabaWdbiabgkGi2kab
-% dIha4baacqGH9aqpdaWcaaWdaeaapeGaemOqai0damaaBaaaleaape
-% GaeGimaadapaqabaaakeaapeGaeq4Wdm3damaaBaaaleaapeGaeSyj
-% IafapaqabaGcpeGaemOray0aaaWaa8aabaWdbiabigdaX8aacquGVa
-% WlpeGaemOuai1damaaCaaaleqabaWdbiabikdaYaaaaOGaayzkJiaa
-% wQYiaaaacqWGQbGApaWaaSbaaSqaa8qacqqGUbGBcqqGPbqAa8aabe
-% aaaaaaaa!D313!
-\begin{equation}
+% eeymaedapaqabaaakeaapeGaeeizaqMaemiDaqhaaiabgUcaRmaala
+% aabaGaemiEaGhabaGaeGOmaiJaemOqai0aaSbaaSqaaiabicdaWaqa
+% baaaaOWaaSaaaeaacqqGKbazcqWGcbGqdaWgaaWcbaGaeGimaadabe
+% aaaOqaaiabbsgaKjabdsha0baaaiaawUhacaGL9baadaWcaaWdaeaa
+% peGaeyOaIyRaeqiYdKhapaqaa8qacqGHciITcqWG4baEaaGaeyypa0
+% ZaaSaaa8aabaWdbiabdkeac9aadaWgaaWcbaWdbiabicdaWaWdaeqa
+% aaGcbaWdbiabeo8aZ9aadaWgaaWcbaWdbiablwIiqbWdaeqaaOWdbi
+% abdAeagnaaamaapaqaa8qacqaIXaqmpaGaef4la8Ydbiabdkfas9aa
+% daahaaWcbeqaa8qacqaIYaGmaaaakiaawMYicaGLQmcaaaGaemOAaO
+% 2damaaBaaaleaapeGaeeOBa4MaeeyAaKgapaqabaaaaaaa!DEF1!
 \begin{array}{*{20}{c}}
-  {\frac{{\partial \psi }}{{\partial t}} - \frac{{\left\langle {{{\left| {\nabla \rho } \right|}^2}/{R^2}} \right\rangle }}{{{\mu _0}{\sigma _\parallel }\rho _{\text{1}}^2\left\langle {1/{R^2}} \right\rangle }}\frac{{{\partial ^2}\psi }}{{\partial {x^2}}} - } \\ 
-  {\left\{ {\frac{{\left\langle {{{\left| {\nabla \rho } \right|}^2}/{R^2}} \right\rangle }}{{{\mu _0}{\sigma _\parallel }\rho _{\text{1}}^2\left\langle {1/{R^2}} \right\rangle }}\frac{\partial }{{\partial x}}\left[ {\ln \left( {\frac{{V'\left\langle {{{\left| {\nabla \rho } \right|}^2}{\text{/}}{R^2}} \right\rangle }}{F}} \right)} \right] + \frac{x}{{{\rho _{\text{1}}}}}\frac{{{\text{d}}{\rho _{\text{1}}}}}{{{\text{d}}t}}} \right\}\frac{{\partial \psi }}{{\partial x}} = \frac{{{B_0}}}{{{\sigma _\parallel }F\left\langle {1{\text{/}}{R^2}} \right\rangle }}{j_{{\text{ni}}}}} 
+{\frac{{\partial \psi }}{{\partial t}} - \frac{{\left\langle {{{\left| {\nabla \rho } \right|}^2}/{R^2}} \right\rangle }}{{{\mu _0}{\sigma _\parallel }\rho _{\rm{1}}^2\left\langle {1/{R^2}} \right\rangle }}\frac{{{\partial ^2}\psi }}{{\partial {x^2}}} - }\\
+{\left\{ {\frac{{\left\langle {{{\left| {\nabla \rho } \right|}^2}/{R^2}} \right\rangle }}{{{\mu _0}{\sigma _\parallel }\rho _{\rm{1}}^2\left\langle {1/{R^2}} \right\rangle }}\frac{\partial }{{\partial x}}\left[ {\ln \left( {\frac{{V'\left\langle {{{\left| {\nabla \rho } \right|}^2}{\rm{/}}{R^2}} \right\rangle }}{F}} \right)} \right] + \frac{x}{{{\rho _{\rm{1}}}}}\frac{{{\rm{d}}{\rho _{\rm{1}}}}}{{{\rm{d}}t}} + \frac{x}{{2{B_0}}}\frac{{{\rm{d}}{B_0}}}{{{\rm{d}}t}}} \right\}\frac{{\partial \psi }}{{\partial x}} = \frac{{{B_0}}}{{{\sigma _\parallel }F\left\langle {1{\rm{/}}{R^2}} \right\rangle }}{j_{{\rm{ni}}}}}
 \end{array}
 \end{equation}
 where
+$\psi$ is the poloidal magnetic flux and $x$ is a normalized flux coordinate, defined as
+\begin{equation}
+x = \frac{\rho }{{{\rho _{{\text{1}}}}}},\quad \rho  = \sqrt {\frac{\Phi }{{\pi {B_0}}}} 
+\end{equation}
+$\Phi$ is the toroidal magnetic flux, $\rho_1$ is $\rho$ at the last closed flux surface (i.e. $x=1$), $V' = \partial V / \partial \rho$.
+$\left\langle \cdot \right\rangle$ corresponds to flux-averaging:
 % MathType!MTEF!2!1!+-
 % feaagKart1ev2aaatCvAUfKttLearuqr1ngBPrgarmqr1ngBPrgitL
 % xBI9gBamXvP5wqSXMqHnxAJn0BKvguHDwzZbqegm0B1jxALjhiov2D
 % aeHbuLwBLnhiov2DGi1BTfMBaebbfv3ySLgzGueE0jxyaibaiKc9yr
 % Vq0xXdbba91rFfpec8Eeeu0xXdbba9frFj0-OqFfea0dXdd9vqaq-J
 % frVkFHe9pgea0dXdar-Jb9hs0dXdbPYxe9vr0-vr0-vqpWqaaeaabi
-% GaciaacaqabeaadaabauaaaOqaaiqbdAfawzaafaGaeyypa0JaeyOa
-% IyRaemOvayLaei4la8IaeyOaIyRaeqyWdihaaa!4A00!
+% GaciaacaqabeaadaabauaaaOqaaabaaaaaaaaapeWaaaWaa8aabaWd
+% biabdMha5bGaayzkJiaawQYiaiabg2da9maalaaapaqaa8qacqGHci
+% ITa8aabaWdbiabgkGi2kabdAfawbaadaWdbaWdaeaapeGaemyEaKNa
+% eeizaqMaemOvayfaleqabeqdcqGHRiI8aOGaeyypa0ZaaSaaaeaada
+% WdfaWdaeaapeWaaSaaa8aabaWdbiabdMha5bWdaeaapeGaemOqai0d
+% amaaBaaaleaapeGaeeiCaaNaee4Ba8MaeeiBaWgapaqabaaaaOWdbi
+% abbsgaKjabdYgaS9aadaWgaaWcbaWdbiabeI7aXbWdaeqaaaWdbeqa
+% beqdcqWIr4E0cqGHRiI8aaGcbaWaa8qba8aabaWdbmaalaaapaqaa8
+% qacqaIXaqma8aabaWdbiabdkeac9aadaWgaaWcbaWdbiabbchaWjab
+% b+gaVjabbYgaSbWdaeqaaaaak8qacqqGKbazcqWGSbaBpaWaaSbaaS
+% qaa8qacqaH4oqCa8aabeaaa8qabeqab0GaeSyeUhTaey4kIipaaaaa
+% aa!721B!
 \begin{equation}
-V' = \partial V/\partial \rho 
+\left\langle y \right\rangle  = \frac{\partial }{{\partial V}}\int {y{\text{d}}V}  = \frac{{\oint {\frac{y}{{{B_{{\text{pol}}}}}}{\text{d}}{l_\theta }} }}{{\oint {\frac{1}{{{B_{{\text{pol}}}}}}{\text{d}}{l_\theta }} }}
 \end{equation}
+
 After using
 % MathType!MTEF!2!1!+-
 % feaagKart1ev2aaatCvAUfKttLearuqr1ngBPrgarmqr1ngBPrgitL
@@ -116,6 +104,7 @@ After using
 \end{array}
 \end{equation}
 the equation can be written as
+\begin{equation}
 % MathType!MTEF!2!1!+-
 % feaagKart1ev2aaatCvAUfKttLearuqr1ngBPrgarmqr1ngBPrgitL
 % xBI9gBamXvP5wqSXMqHnxAJn0BKvguHDwzZbqegm0B1jxALjhiov2D
@@ -128,23 +117,25 @@ the equation can be written as
 % peGaeqiVd02damaaBaaaleaapeGaeGimaadapaqabaGcpeGaeq4Wdm
 % 3damaaBaaaleaapeGaeSyjIafapaqabaGcpeGaeqyWdi3damaaDaaa
 % leaapeGaeeymaedapaqaa8qacqaIYaGmaaGcpaGaem4zaC2aaSbaaS
-% qaaiabigdaXaqabaaaaOWdbmaadmaabaWaaSaaa8aabaWdbiabgkGi
+% qaaiabigdaXaqabaaaaOWdbmaacmaabaWaaSaaa8aabaWdbiabgkGi
 % 2+aadaahaaWcbeqaa8qacqaIYaGmaaGccqaHipqEa8aabaWdbiabgk
 % Gi2kabdIha49aadaahaaWcbeqaa8qacqaIYaGmaaaaaOGaey4kaSYa
-% aSaaaeaacqGHciITaeaacqGHciITcqWG4baEaaGagiiBaWMaeiOBa4
-% 2aaeWaaeaadaWcaaqaaiqbdAfawzaafaGaem4zaC2aaSbaaSqaaiab
-% ikdaYaqabaaakeaacqWGgbGraaaacaGLOaGaayzkaaWaaSaaaeaacq
-% GHciITcqaHipqEaeaacqGHciITcqWG4baEaaaacaGLBbGaayzxaaGa
-% eyOeI0YaaSaaaeaacqWG4baEaeaacqaHbpGCdaWgaaWcbaGaeGymae
-% dabeaaaaGcdaWcaaqaaiabbsgaKjabeg8aYnaaBaaaleaacqaIXaqm
-% aeqaaaGcbaGaeeizaqMaemiDaqhaamaalaaabaGaeyOaIyRaeqiYdK
-% habaGaeyOaIyRaemiEaGhaaiabg2da9maalaaapaqaa8qacqWGcbGq
-% paWaaSbaaSqaa8qacqaIWaama8aabeaaaOqaa8qacqaHdpWCpaWaaS
-% baaSqaa8qacqWILicua8aabeaak8qacqWGgbGrcqWGNbWzdaWgaaWc
-% baGaeGymaedabeaaaaGccqWGQbGApaWaaSbaaSqaa8qacqqGUbGBcq
-% qGPbqAa8aabeaaaaa!9965!
-\begin{equation}
-\frac{{\partial \psi }}{{\partial t}} - \frac{{{g_2}}}{{{\mu _0}{\sigma _\parallel }\rho _{\text{1}}^2{g_1}}}\left[ {\frac{{{\partial ^2}\psi }}{{\partial {x^2}}} + \frac{\partial }{{\partial x}}\ln \left( {\frac{{V'{g_2}}}{F}} \right)\frac{{\partial \psi }}{{\partial x}}} \right] - \frac{x}{{{\rho _1}}}\frac{{{\text{d}}{\rho _1}}}{{{\text{d}}t}}\frac{{\partial \psi }}{{\partial x}} = \frac{{{B_0}}}{{{\sigma _\parallel }F{g_1}}}{j_{{\text{ni}}}}
+% aSaaaeaacqGHciITaeaacqGHciITcqWG4baEaaWaamWaaeaacyGGSb
+% aBcqGGUbGBdaqadaqaamaalaaabaGafmOvayLbauaacqWGNbWzdaWg
+% aaWcbaGaeGOmaidabeaaaOqaaiabdAeagbaaaiaawIcacaGLPaaaai
+% aawUfacaGLDbaadaWcaaqaaiabgkGi2kabeI8a5bqaaiabgkGi2kab
+% dIha4baaaiaawUhacaGL9baacqGHsisldaqadaqaamaalaaabaGaem
+% iEaGhabaGaeqyWdi3aaSbaaSqaaiabigdaXaqabaaaaOWaaSaaaeaa
+% cqqGKbazcqaHbpGCdaWgaaWcbaGaeGymaedabeaaaOqaaiabbsgaKj
+% abdsha0baacqGHRaWkdaWcaaqaaiabdIha4bqaaiabikdaYiabdkea
+% cnaaBaaaleaacqaIWaamaeqaaaaakmaalaaabaGaeeizaqMaemOqai
+% 0aaSbaaSqaaiabicdaWaqabaaakeaacqqGKbazcqWG0baDaaaacaGL
+% OaGaayzkaaWaaSaaaeaacqGHciITcqaHipqEaeaacqGHciITcqWG4b
+% aEaaGaeyypa0ZaaSaaa8aabaWdbiabdkeac9aadaWgaaWcbaWdbiab
+% icdaWaWdaeqaaaGcbaWdbiabeo8aZ9aadaWgaaWcbaWdbiablwIiqb
+% WdaeqaaOWdbiabdAeagjabdEgaNnaaBaaaleaacqaIXaqmaeqaaaaa
+% kiabdQgaQ9aadaWgaaWcbaWdbiabb6gaUjabbMgaPbWdaeqaaaaa!A8FD!
+\frac{{\partial \psi }}{{\partial t}} - \frac{{{g_2}}}{{{\mu _0}{\sigma _\parallel }\rho _{\rm{1}}^2{g_1}}}\left\{ {\frac{{{\partial ^2}\psi }}{{\partial {x^2}}} + \frac{\partial }{{\partial x}}\left[ {\ln \left( {\frac{{V'{g_2}}}{F}} \right)} \right]\frac{{\partial \psi }}{{\partial x}}} \right\} - \left( {\frac{x}{{{\rho _1}}}\frac{{{\rm{d}}{\rho _1}}}{{{\rm{d}}t}} + \frac{x}{{2{B_0}}}\frac{{{\rm{d}}{B_0}}}{{{\rm{d}}t}}} \right)\frac{{\partial \psi }}{{\partial x}} = \frac{{{B_0}}}{{{\sigma _\parallel }F{g_1}}}{j_{{\rm{ni}}}}
 \end{equation}
 
 \subsection{Boundary conditions}
