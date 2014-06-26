@@ -17,12 +17,12 @@ We propose to implement a FEM solver for a generic diffusion-advection equation,
 % gkGi2cqaaiabgkGi2kabdIha4baadaqadaqaaiabeg7aHnaaBaaale
 % aacqaI0aanaeqaaOGaemyEaKhacaGLOaGaayzkaaGaey4kaSIaeqyS
 % de2aaSbaaSqaaiabiwda1aqabaGccqWG5bqEaiaawIcacaGLPaaacq
-% GHRaWkcqaHXoqydaWgaaWcbaGaeGOnaydabeaakmaalaaabaGaeyOa
+% GHsislcqaHXoqydaWgaaWcbaGaeGOnaydabeaakmaalaaabaGaeyOa
 % IylabaGaeyOaIyRaemiEaGhaamaabmaabaGaeqySde2aaSbaaSqaai
 % abiEda3aqabaGccqWG5bqEaiaawIcacaGLPaaacqGH9aqpcqaHYoGy
 % daWgaaWcbaGaeGymaedabeaakiabgUcaRiabek7aInaaBaaaleaacq
-% aIYaGmaeqaaOGaemyEaKhaaa!7D9F!
-\frac{\partial }{{\partial t}}\left( {{\alpha _1}y} \right) - {\alpha _2}\frac{\partial }{{\partial x}}\left( {{\alpha _3}\frac{\partial }{{\partial x}}\left( {{\alpha _4}y} \right) + {\alpha _5}y} \right) + {\alpha _6}\frac{\partial }{{\partial x}}\left( {{\alpha _7}y} \right) = {\beta _1} + {\beta _2}y
+% aIYaGmaeqaaOGaemyEaKhaaa!7DAA!
+\frac{\partial }{{\partial t}}\left( {{\alpha _1}y} \right) - {\alpha _2}\frac{\partial }{{\partial x}}\left( {{\alpha _3}\frac{\partial }{{\partial x}}\left( {{\alpha _4}y} \right) + {\alpha _5}y} \right) - {\alpha _6}\frac{\partial }{{\partial x}}\left( {{\alpha _7}y} \right) = {\beta _1} + {\beta _2}y
 \end{equation}
 where $y = y\left( t, x \right)$ is the unknown quantity, $\alpha_i\left( t, x \right)$, $\beta_i\left( t, x \right)$ are known coefficients and $0\leq x \leq 1$. The boundary conditions are
 \begin{equation}
@@ -65,5 +65,65 @@ and the initial condition is
 % beaaaaa!4F16!
 y\left( {t = {t_0},x} \right) = {y_0}.
 \end{equation}
+
+The coefficients will be provided on a set of $x$ points.
+The FEM solver will be responsible for an appropriate interpolation
+of the coefficients.
+
+\subsection{Current diffusion coefficients} % (fold)
+\label{sub:currdiffcoef}
+For the current diffusion equation (\ref{eq:currdiff}),
+the coefficients are
+\begin{equation}
+% MathType!MTEF!2!1!+-
+% feaagKart1ev2aaatCvAUfKttLearuqr1ngBPrgarmqr1ngBPrgitL
+% xBI9gBamXvP5wqSXMqHnxAJn0BKvguHDwzZbqegm0B1jxALjhiov2D
+% aeHbuLwBLnhiov2DGi1BTfMBaebbfv3ySLgzGueE0jxyaibaiKc9yr
+% Vq0xXdbba91rFfpec8Eeeu0xXdbba9frFj0-OqFfea0dXdd9vqaq-J
+% frVkFHe9pgea0dXdar-Jb9hs0dXdbPYxe9vr0-vr0-vqpWqaaeaabi
+% GaciaacaqabeaadaabauaaaOabaeqabaGaeqySde2aaSbaaSqaaiab
+% igdaXaqabaGccqGH9aqpcqaIXaqmaeaacqaHXoqydaWgaaWcbaGaeG
+% Omaidabeaakiabg2da9abaaaaaaaaapeWaaSaaa8aabaWdbiabdEga
+% NnaaBaaaleaacqaIYaGmaeqaaaGcpaqaa8qacqaH8oqBpaWaaSbaaS
+% qaa8qacqaIWaama8aabeaak8qacqaHdpWCpaWaaSbaaSqaa8qacqWI
+% Licua8aabeaak8qacqaHbpGCpaWaa0baaSqaa8qacqqGXaqma8aaba
+% WdbiabikdaYaaak8aacqWGNbWzdaWgaaWcbaGaeGymaedabeaaaaaa
+% k8qabaGaeqySde2aaSbaaSqaaiabiodaZaqabaGccqGH9aqpcqaIXa
+% qmaeaacqaHXoqydaWgaaWcbaGaeGinaqdabeaakiabg2da9iabigda
+% Xaqaaiabeg7aHnaaBaaaleaacqaI1aqnaeqaaOGaeyypa0JaeGimaa
+% dabaGaeqySde2aaSbaaSqaaiabiAda2aqabaGccqGH9aqpdaWcaaWd
+% aeaapeGaem4zaC2aaSbaaSqaaiabikdaYaqabaaak8aabaWdbiabeY
+% 7aT9aadaWgaaWcbaWdbiabicdaWaWdaeqaaOWdbiabeo8aZ9aadaWg
+% aaWcbaWdbiablwIiqbWdaeqaaOWdbiabeg8aY9aadaqhaaWcbaWdbi
+% abbgdaXaWdaeaapeGaeGOmaidaaOWdaiabdEgaNnaaBaaaleaacqaI
+% Xaqmaeqaaaaak8qadaWcaaqaaiabgkGi2cqaaiabgkGi2kabdIha4b
+% aadaWadaqaaiGbcYgaSjabc6gaUnaabmaabaWaaSaaaeaacuWGwbGv
+% gaqbaiabdEgaNnaaBaaaleaacqaIYaGmaeqaaaGcbaGaemOrayeaaa
+% GaayjkaiaawMcaaaGaay5waiaaw2faaiabgUcaRmaalaaabaGaemiE
+% aGhabaGaeqyWdi3aaSbaaSqaaiabigdaXaqabaaaaOWaaSaaaeaacq
+% qGKbazcqaHbpGCdaWgaaWcbaGaeGymaedabeaaaOqaaiabbsgaKjab
+% dsha0baacqGHRaWkdaWcaaqaaiabdIha4bqaaiabikdaYiabdkeacn
+% aaBaaaleaacqaIWaamaeqaaaaakmaalaaabaGaeeizaqMaemOqai0a
+% aSbaaSqaaiabicdaWaqabaaakeaacqqGKbazcqWG0baDaaaabaGaeq
+% ySde2aaSbaaSqaaiabiEda3aqabaGccqGH9aqpcqaIXaqmaeaacqaH
+% YoGydaWgaaWcbaGaeGymaedabeaakiabg2da9maalaaapaqaa8qacq
+% WGcbGqpaWaaSbaaSqaa8qacqaIWaama8aabeaaaOqaa8qacqaHdpWC
+% paWaaSbaaSqaa8qacqWILicua8aabeaak8qacqWGgbGrcqWGNbWzda
+% WgaaWcbaGaeGymaedabeaaaaGccqWGQbGApaWaaSbaaSqaa8qacqqG
+% UbGBcqqGPbqAa8aabeaaaOqaaiabek7aInaaBaaaleaacqaIYaGmae
+% qaaOGaeyypa0JaeGimaadaaaa!BECA!
+\begin{array}{l}
+{\alpha _1} = 1\\
+{\alpha _2} = \frac{{{g_2}}}{{{\mu _0}{\sigma _\parallel }\rho _{\rm{1}}^2{g_1}}}\\
+{\alpha _3} = 1\\
+{\alpha _4} = 1\\
+{\alpha _5} = 0\\
+{\alpha _6} = \frac{{{g_2}}}{{{\mu _0}{\sigma _\parallel }\rho _{\rm{1}}^2{g_1}}}\frac{\partial }{{\partial x}}\left[ {\ln \left( {\frac{{V'{g_2}}}{F}} \right)} \right] + \frac{x}{{{\rho _1}}}\frac{{{\rm{d}}{\rho _1}}}{{{\rm{d}}t}} + \frac{x}{{2{B_0}}}\frac{{{\rm{d}}{B_0}}}{{{\rm{d}}t}}\\
+{\alpha _7} = 1\\
+{\beta _1} = \frac{{{B_0}}}{{{\sigma _\parallel }F{g_1}}}{j_{{\rm{ni}}}}\\
+{\beta _2} = 0
+\end{array}
+\end{equation}
+% subsection currdiffcoef (end)
 
 % section fem_solver (end)
